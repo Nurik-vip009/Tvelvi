@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RegisterPage.css'
 
-export default function RegisterPage({ onContinue }) {
+export default function RegisterPage() {
     const [phone, setPhone] = useState('');
     const navigate = useNavigate();
 

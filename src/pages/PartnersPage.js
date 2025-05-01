@@ -1,5 +1,4 @@
 import React from "react";
-import { ArrowLeft } from "lucide-react";
 import './PartnersPage.css'
 import partnersImg from '../assets/Frame 217.svg'
 import {useNavigate} from "react-router-dom";

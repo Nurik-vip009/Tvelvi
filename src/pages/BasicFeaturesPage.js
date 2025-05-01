@@ -1,13 +1,22 @@
 import React from 'react';
 import FeatureCard from './FeatureCard';
 import icon_1 from '../assets/image 79.svg'
+import icon_2 from '../assets/image 80.svg'
+import icon_3 from '../assets/freepik__background__70030 1.svg'
+import icon_4 from '../assets/image 72.svg'
+import {useNavigate} from "react-router-dom";
 const BasicFeaturesPage = ({ onPriceChange }) => {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate("/additionalFeaturesPage"); // укажи нужный путь
+    }
     const features = [
         {
             title: 'Лёгкий вход для ваших клиентов — повышение конверсии и лояльности.',
             price: 15000,
+            title2: 'Регистрация и авторизация',
             description:
-                'Регистрация и авторизация. Функция позволяет пользователям регистрироваться и входить через почту, соцсети или номер телефона.',
+                'Функция позволяет пользователям регистрироваться и входить через почту, соцсети или номер телефона.',
             image: (
                 <img
                     src={icon_1}
@@ -19,11 +28,12 @@ const BasicFeaturesPage = ({ onPriceChange }) => {
         {
             title: 'Каждый профиль помогает лучше узнать потребности клиента и удивить его.',
             price: 10000,
+            title2: 'Профили пользователя',
             description:
-                'Профили пользователя. Позволяет пользователям настраивать свои данные, загрузить фото и контактную информацию.',
+                ' Позволяет пользователям настраивать свои данные, загрузить фото и контактную информацию.',
             image: (
                 <img
-                    src="https://via.placeholder.com/120x200"
+                    src={icon_2}
                     alt="Профили пользователя"
                     className="feature-image-img"
                 />
@@ -32,11 +42,12 @@ const BasicFeaturesPage = ({ onPriceChange }) => {
         {
             title: 'Легкий доступ к важной информации — повышает оценку удобства',
             price: 10000,
+            title2: 'Навигация и главная страница',
             description:
-                'Навигация и главная страница. Интуитивная система навигации и понятный главный экран с быстрым доступом к основным функциям.',
+                'Интуитивная система навигации и понятный главный экран с быстрым доступом к основным функциям.',
             image: (
                 <img
-                    src="https://via.placeholder.com/120x200"
+                    src={icon_3}
                     alt="Навигация"
                     className="feature-image-img"
                 />
@@ -45,11 +56,12 @@ const BasicFeaturesPage = ({ onPriceChange }) => {
         {
             title: 'Ваши клиенты будут оформлять заказы быстрее и с удобством',
             price: 15000,
+            title2: 'Оформление заказов',
             description:
-                'Оформление заказов. Позволяет пользователям быстро и удобно оформлять заказы через приложение.',
+                'Позволяет пользователям быстро и удобно оформлять заказы через приложение.',
             image: (
                 <img
-                    src="https://via.placeholder.com/120x200"
+                    src={icon_4}
                     alt="Оформление заказов"
                     className="feature-image-img"
                 />
@@ -66,6 +78,7 @@ const BasicFeaturesPage = ({ onPriceChange }) => {
                         key={index}
                         title={feature.title}
                         price={feature.price}
+                        title2={feature.title2}
                         description={feature.description}
                         image={feature.image}
                         onPriceChange={onPriceChange}
@@ -73,7 +86,7 @@ const BasicFeaturesPage = ({ onPriceChange }) => {
                 ))}
             </div>
             <div className="fixed-button-container">
-                <button className="action-button">Готово</button>
+                <button onClick={handleClick} className="action-button">Готово</button>
             </div>
         </div>
     );

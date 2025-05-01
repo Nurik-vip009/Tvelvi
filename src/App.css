@@ -35,7 +35,7 @@ body {
     height: 8px;
     background-color: #d1d5db;
     border-radius: 50%;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .progress-dot.active {
@@ -47,7 +47,8 @@ body {
     height: 2px;
     background-color: #d1d5db;
     margin: 0 4px;
-    transition: background-color 0.3s;
+    position: relative;
+    transition: background-color 0.3s ease;
 }
 
 .progress-line.active {
@@ -80,24 +81,7 @@ body {
     color: #7c3aed;
 }
 
-.page {
-    padding: 16px;
-    padding-bottom: 80px;
-}
-
-.page-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 16px;
-}
-
-.features-list {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
+/* Общие стили для FeatureCard */
 .feature-card {
     display: flex;
     align-items: center;
@@ -105,7 +89,7 @@ body {
     width: 100%;
     height: 235px;
     padding: 16px;
-    background-color: #E5E6FA;
+    background-color: #ffffff;
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -140,6 +124,7 @@ body {
     font-size: 16px;
     font-weight: 600;
     color: #1f2937;
+    margin: 0;
     margin-bottom: 8px;
     line-height: 1.4;
 }
@@ -151,6 +136,43 @@ body {
     line-height: 1.5;
 }
 
+.feature-price-bottom {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.feature-price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.feature-image {
+    width: 120px;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.feature-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #6b7280;
+    text-align: center;
+}
 
 .feature-check {
     position: absolute;
@@ -158,7 +180,7 @@ body {
     right: 16px;
     width: 24px;
     height: 24px;
-    background-color: #6F35FF;
+    background-color: #22c55e;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -211,66 +233,4 @@ body {
 
 .back-button:hover {
     background-color: #c1c5cb;
-}
-
-.action-button {
-    background-color: #7c3aed;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.action-button:hover {
-    background-color: #6d28d9;
-}
-
-.final-price-container {
-    text-align: center;
-    padding: 32px 16px;
-}
-
-.final-price-text {
-    font-size: 16px;
-    color: #6b7280;
-    margin-bottom: 16px;
-}
-
-.final-price-amount {
-    font-size: 24px;
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 24px;
-}
-
-.final-price-button {
-    width: 100%;
-    background-color: #7c3aed;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.final-price-button:hover {
-    background-color: #6d28d9;
-}
-
-.fixed-button-container {
-    position: fixed;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 375px;
-    display: flex;
-    justify-content: center;
-    padding: 0 16px;
-    box-sizing: border-box;
 }

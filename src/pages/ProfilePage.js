@@ -12,6 +12,9 @@ const ProfilePage = () => {
     const handleClick2 = () => {
         navigate("/basicFeaturesPage"); // укажи нужный путь
     }
+    const  handleClick3 = () => {
+        navigate("/");
+    }
     return (
         <div className="profile-page">
             {/* Верхняя часть */}
@@ -66,7 +69,7 @@ const ProfilePage = () => {
 
             {/* Низ - действия */}
             <div className="bottom_btn">
-                <button className="exit_btn">
+                <button onClick={handleClick3} className="exit_btn">
                     <LogOut size={18} />
                     <span>Выйти</span>
                 </button>

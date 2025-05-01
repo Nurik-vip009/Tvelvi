@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FeatureCard = ({ title, price, description, image, onPriceChange }) => {
+const FeatureCard = ({ title, price, description, image, onPriceChange, className = '' }) => {
     const [isSelected, setIsSelected] = useState(false);
 
     const handleToggle = () => {
@@ -21,7 +21,7 @@ const FeatureCard = ({ title, price, description, image, onPriceChange }) => {
 
     return (
         <div
-            className="feature-card"
+            className={`feature-card ${className}`}
             onClick={handleToggle}
             onKeyDown={handleKeyDown}
             role="checkbox"
@@ -31,10 +31,16 @@ const FeatureCard = ({ title, price, description, image, onPriceChange }) => {
             <div className="feature-content">
                 <div className="feature-text">
                     <div className="feature-price-top">
-                        ОТ {(price || 0).toLocaleString()} ₽
+                        Выберите стиль — ваш бренд в минималистичном дизайне!
                     </div>
                     <h3 className="feature-title">{title}</h3>
                     <p className="feature-description">{description}</p>
+                    <div className="feature-price-bottom">
+                        Запомните ваш бренд — уникальный стиль привлечёт внимание
+                    </div>
+                    <div className="feature-price">
+                        {(price || 0).toLocaleString()} ₽
+                    </div>
                 </div>
                 <div className="feature-image">{image || <div className="placeholder-image">No Image</div>}</div>
             </div>

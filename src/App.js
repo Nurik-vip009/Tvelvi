@@ -10,6 +10,7 @@ import FeaturesFlow from './pages/FeaturesFlow';
 import BasicFeaturesPage from './pages/BasicFeaturesPage';
 import DesignPage from './pages/DesighPage';
 import FinalPricePage from "./pages/FinalPricePage";
+import AdditionalFeaturesPage from "./pages/AdditionalFeaturesPage";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/nextPartners" element={<NextPartnersPage />} />
                 <Route path="/basicFeaturesPage" element={<BasicFeaturesPage />} />
+                <Route path="/additionalFeaturesPage" element={<AdditionalFeaturesPage />} />
                 <Route path="/designPage" element={<DesignPage />} />
                 <Route path="/finalPrice" element={<FinalPricePage />} />
                 {/* Новый маршрут для потока страниц с функциями */}

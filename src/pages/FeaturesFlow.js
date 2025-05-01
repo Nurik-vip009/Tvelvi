@@ -33,12 +33,12 @@ const FeaturesFlow = () => {
     const handlers = useSwipeable({
         onSwipedLeft: () => {
             if (currentPageIndex >= 0 && currentPageIndex < pages.length - 1) {
-                navigate(`/features/${pages[currentPageIndex + 1].path}`); // Исправлено: убрано "*"
+                navigate(`/features/${pages[currentPageIndex + 1].path}`);
             }
         },
         onSwipedRight: () => {
             if (currentPageIndex > 0) {
-                navigate(`/features/${pages[currentPageIndex - 1].path}`); // Исправлено: убрано "*"
+                navigate(`/features/${pages[currentPageIndex - 1].path}`);
             } else {
                 navigate('/');
             }
@@ -48,13 +48,13 @@ const FeaturesFlow = () => {
 
     const handleNext = () => {
         if (currentPageIndex >= 0 && currentPageIndex < pages.length - 1) {
-            navigate(`/features/${pages[currentPageIndex + 1].path}`); // Исправлено: убрано "*"
+            navigate(`/features/${pages[currentPageIndex + 1].path}`);
         }
     };
 
     const handleBack = () => {
         if (currentPageIndex > 0) {
-            navigate(`/features/${pages[currentPageIndex - 1].path}`); // Исправлено: убрано "*"
+            navigate(`/features/${pages[currentPageIndex - 1].path}`);
         } else {
             navigate('/');
         }
@@ -71,11 +71,11 @@ const FeaturesFlow = () => {
                     {pages.map((_, index) => (
                         <div key={index} className="progress-step">
                             <div
-                                className={`progress-dot ${index <= currentPageIndex ? 'active' : ''}`}
+                                className={`progress-dot ${index <= currentPageIndex && currentPageIndex >= 0 ? 'active' : ''}`}
                             ></div>
                             {index < pages.length - 1 && (
                                 <div
-                                    className={`progress-line ${index < currentPageIndex ? 'active' : ''}`} // Исправлено: ViteLineActive → currentPageIndex
+                                    className={`progress-line ${index < currentPageIndex && currentPageIndex > 0 ? 'active' : ''}`}
                                 ></div>
                             )}
                         </div>

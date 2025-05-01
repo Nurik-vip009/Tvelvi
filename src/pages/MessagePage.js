@@ -3,7 +3,7 @@ import './MessagePage.css'
 import {useNavigate} from "react-router-dom";
 
 
-export default function MessagePage({ onContinue }) {
+export default function MessagePage() {
     const [code, setCode] = useState(['', '', '', '', '']);
     const [secondsLeft, setSecondsLeft] = useState(150); // 2:30 минуты
     const navigate = useNavigate();
