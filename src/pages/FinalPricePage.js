@@ -6,20 +6,28 @@ const FinalPricePage = ({ totalPrice = 0 }) => {
 
     return (
         <div className="page">
+            <div className="steps">
+                <div className='active' onClick={() => navigate('/basicFeaturesPage')}></div>
+                <span className='active'></span>
+                <div className='active' onClick={() => navigate('/additionalFeaturesPage')}></div>
+                <span className='active'></span>
+                <div className='active' onClick={() => navigate('/designPage')}></div>
+                <span className='active'></span>
+                <div className='active' onClick={() => navigate('/finalPrice')}></div>
+            </div>
             <h2 className="page-title">Финальная стоимость</h2>
             <div className="final-price-container">
-                <p className="final-price-text">
-                    Итоговая стоимость вашего проекта:
-                </p>
-                <p className="final-price-amount">
-                    {(totalPrice || 0).toLocaleString()} ₽
-                </p>
-                <button
-                    className="action-button final-price-button"
-                    onClick={() => navigate('')}
-                >
-                    Перейти к оплате
-                </button>
+                <div className='amount'>
+                    <h2 className="final-price-text">
+                        Итого: {(totalPrice || 0).toLocaleString()} ₽
+                    </h2>
+                    <button
+                        className="action-button final-price-button"
+                        onClick={() => navigate('')}
+                    >
+                        Перейти к оплате
+                    </button>
+                </div>
             </div>
         </div>
     );

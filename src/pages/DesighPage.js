@@ -4,6 +4,7 @@ import './DesighPage.css'
 import icon_1 from '../assets/Remove-bg.ai_1731875233067 1.svg'
 import icon_2 from '../assets/Remove-bg.ai_1731887506469 1.svg'
 import icon_3 from '../assets/Remove-bg.ai_1731888462468 1.svg'
+import { useNavigate } from 'react-router-dom';
 const DesignPage = ({ onPriceChange }) => {
     const features = [
         {
@@ -44,8 +45,22 @@ const DesignPage = ({ onPriceChange }) => {
         },
     ];
 
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate("/finalPrice"); // укажи нужный путь
+    }
+
     return (
         <div className="page">
+            <div className="steps">
+                <div className='active' onClick={() => navigate('/basicFeaturesPage')}></div>
+                <span className='active'></span>
+                <div className='active' onClick={() => navigate('/additionalFeaturesPage')}></div>
+                <span className='active'></span>
+                <div className='active' onClick={() => navigate('/designPage')}></div>
+                <span></span>
+                <div onClick={() => navigate('/finalPrice')}></div>
+            </div>
             <h2 className="page-title">Дизайн</h2>
             <div className="features-list">
                 {features.map((feature, index) => (
@@ -58,6 +73,9 @@ const DesignPage = ({ onPriceChange }) => {
                         onPriceChange={onPriceChange}
                     />
                 ))}
+            </div>
+            <div className="fixed-button-container">
+                <button onClick={handleClick} className="action-button">Готово</button>
             </div>
         </div>
     );

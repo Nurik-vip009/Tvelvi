@@ -4,12 +4,14 @@ import icon_1 from '../assets/image 79.svg'
 import icon_2 from '../assets/image 80.svg'
 import icon_3 from '../assets/freepik__background__70030 1.svg'
 import icon_4 from '../assets/image 72.svg'
+import './BasicFeaturesPage.css'
 import {useNavigate} from "react-router-dom";
 const BasicFeaturesPage = ({ onPriceChange }) => {
     const navigate = useNavigate();
     const handleClick = () => {
         navigate("/additionalFeaturesPage"); // укажи нужный путь
     }
+
     const features = [
         {
             title: 'Лёгкий вход для ваших клиентов — повышение конверсии и лояльности.',
@@ -71,6 +73,15 @@ const BasicFeaturesPage = ({ onPriceChange }) => {
 
     return (
         <div className="page">
+            <div className="steps">
+                <div className='active' onClick={() => navigate('/basicFeaturesPage')}></div>
+                <span></span>
+                <div onClick={() => navigate('/additionalFeaturesPage')}></div>
+                <span></span>
+                <div onClick={() => navigate('/designPage')}></div>
+                <span></span>
+                <div onClick={() => navigate('/finalPrice')}></div>
+            </div>
             <h2 className="page-title">Базовые функции</h2>
             <div className="features-list">
                 {features.map((feature, index) => (

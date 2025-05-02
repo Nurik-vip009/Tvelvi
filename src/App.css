@@ -4,6 +4,11 @@ body {
     background-color: #f3f4f6;
 }
 
+@font-face {
+    font-family: 'Druk Text Wide Cyr';
+    src: url('./assets/fonts/druktextwidecyr-medium.ttf');
+}
+
 .app {
     display: flex;
     justify-content: center;
@@ -81,25 +86,86 @@ body {
     color: #7c3aed;
 }
 
+
+
 /* Общие стили для FeatureCard */
 .feature-card {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    height: 235px;
+    width: 80%;
+    /* height: 235px; */
+    height: 100%;
+    min-height: 220px;
     padding: 16px;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     position: relative;
+    border-radius: 16px;
+    border: 1px solid #D6D5F4;
+
+    background: #E5E6FA;
+}
+
+
+.feature_content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.feature_up{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.feature_down{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.feature_down h3{
+    font-family: Manrope;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin: 0;
+}
+
+.feature_down p{
+    margin: 0;
+    font-family: Manrope;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.14px;
 }
 
 .feature-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.feature_image {
+    width: 100%;
+    height: 100%;
+}
+
+.feature_image img{
+    max-width: 115px;
+    max-height: 115px;
     width: 100%;
     height: 100%;
 }
@@ -113,20 +179,29 @@ body {
 }
 
 .feature-price-top {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     color: #6b7280;
     margin-bottom: 8px;
     text-transform: uppercase;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    background: rgba(58, 90, 192, 0.30);
+    backdrop-filter: blur(4px);
+    padding: 10px;
+    color: #0D0D0D;
+    margin-bottom: 12px;
 }
 
 .feature-title {
-    font-size: 16px;
+    /* font-size: 16px; */
+    font-size: 18px;
     font-weight: 600;
     color: #1f2937;
     margin: 0;
     margin-bottom: 8px;
     line-height: 1.4;
+    margin-bottom: 4px;
 }
 
 .feature-description {
@@ -144,9 +219,17 @@ body {
 }
 
 .feature-price {
-    font-size: 16px;
+    width: fit-content;
+    font-size: 12px;
     font-weight: 600;
-    color: #1f2937;
+    /* color: #1f2937; */
+    font-family: "Druk Text Wide Cyr";
+    color: #2B1E97;
+    padding: 6px 10px;
+    background: #B1B4FE;
+    border-radius: 100px;
+    margin-bottom: 8px;
+
 }
 
 .feature-image {
@@ -180,7 +263,7 @@ body {
     right: 16px;
     width: 24px;
     height: 24px;
-    background-color: #22c55e;
+    background-color: #6F35FF;
     border-radius: 50%;
     display: flex;
     align-items: center;

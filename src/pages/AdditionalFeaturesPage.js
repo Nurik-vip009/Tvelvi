@@ -45,12 +45,10 @@ const AdditionalFeaturesPage = ({ onPriceChange }) => {
             title: 'Отслеживание курьеров — повышает уверенность клиентов и удобство',
             price: 20000,
             description: 'Геолокация и отслеживание. Отслеживание местоположения курьеров в реальном времени.',
-            icon: (
-                <svg className="feature-icon-svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+            image: (
+                <img src={icon_3} alt=""/>
             ),
+            
         },
         {
             title: 'Сделайте оплату легкой и удобной — клиенты оценят удобство',
@@ -64,6 +62,15 @@ const AdditionalFeaturesPage = ({ onPriceChange }) => {
 
     return (
         <div className="page">
+            <div className="steps">
+                <div className='active' onClick={() => navigate('/basicFeaturesPage')}></div>
+                <span className='active'></span>
+                <div className='active' onClick={() => navigate('/additionalFeaturesPage')}></div>
+                <span></span>
+                <div onClick={() => navigate('/designPage')}></div>
+                <span></span>
+                <div onClick={() => navigate('/finalPrice')}></div>
+            </div>
             <h2 className="page-title">Дополнительные функции</h2>
             <div className="features-list">
                 {features.map((feature, index) => (
